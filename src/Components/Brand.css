@@ -1,50 +1,51 @@
-/* Brand.css */
-
 .brand-section {
-  padding: 2rem;
-  max-width: 1600px;
+  padding: 40px 20px;
+  max-width: 1540px;
   margin: 0 auto;
 }
 
-.brand-section h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+.section-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 24px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-family: sans-serif; /* Or project's font */
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
 }
 
-.brand-grid {
+.brand-grid-spotlight {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {
-  .brand-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .brand-grid-spotlight {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
-@media (min-width: 1024px) {
-  .brand-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
+.brand-card-spotlight {
+  display: flex;
+  flex-direction: column;
 }
 
-.brand-card {
+.brand-link-spotlight {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand-image-wrapper {
   position: relative;
-  overflow: hidden;
-  aspect-ratio: 1 / 1; /* Keep cards square-ish */
-  border-radius: 8px; /* Optional rounded corners */
-  cursor: pointer;
-}
-
-/* Image Styling */
-.brand-image-container {
   width: 100%;
-  height: 100%;
+  /* Aspect ratio for the images */
+  aspect-ratio: 512 / 341;
+  overflow: hidden;
+  border-radius: 4px;
 }
 
 .brand-image {
@@ -54,59 +55,44 @@
   transition: transform 0.5s ease;
 }
 
-.brand-card:hover .brand-image {
-  transform: scale(1.1);
+.brand-card-spotlight:hover .brand-image {
+  transform: scale(1.05); /* Subtle zoom on hover */
 }
 
-/* Overlay Gradient */
-.brand-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent 60%);
-  pointer-events: none; /* Let clicks pass through to the link/button if needed */
-  z-index: 1;
-}
-
-/* Content / Button */
-.brand-content {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  z-index: 2;
-}
-
-.shop-now-btn {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(4px);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
+.brand-details {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align text and button */
+  gap: 12px;
+}
+
+.brand-name {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.shop-collection-btn {
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-  text-decoration: none; /* If it's an anchor tag */
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-.shop-now-btn:hover {
-  background-color: white;
-  color: black;
-}
-
-.arrow-icon {
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-  transition: transform 0.3s ease;
-}
-
-.shop-now-btn:hover .arrow-icon {
-  transform: translateX(4px);
+.brand-card-spotlight:hover .shop-collection-btn {
+  background-color: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #fff;
 }
