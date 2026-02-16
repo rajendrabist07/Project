@@ -1,10 +1,11 @@
 import Advertisement from "./Components/Advertisement"
 import Header from "./Components/Header"
 import Hero from "./Components/Hero"
-import Brand from "./Components/Brand"
+import ShoesCollection from "./Components/ShoesCollection"
+
 import Service from "./Components/Service"
 import Product from "./Components/Product"
-
+import Brand from "./Components/Brand"
 
 function App() {
 
@@ -14,11 +15,11 @@ function App() {
       <Advertisement />
       <Header />
       <Hero />
-      <Brand />
+      <ShoesCollection />
+
       <Service />
       <Product />
-
-
+      <Brand />
     </>
   )
 }
